@@ -1,10 +1,146 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="Projects, downloads and links."><title>Downloads — My Projects</title><link rel="stylesheet" href="style.css"></head>
-<body><div class="page"><header class="navbar"><a class="logo" href="index.html">MY<span>SITE</span></a><nav><a class="nav-btn " href="index.html">⌂ Home</a><a class="nav-btn " href="projects.html">▦ Projects</a><a class="nav-btn active" href="downloads.html">↓ Downloads</a><a class="nav-btn " href="links.html">↗ Links</a></nav></header><main><section class="section downloads-section"><div class="section-heading"><p class="eyebrow">DOWNLOADS</p><h2>Files & Releases</h2><p>Put your download links below. They can point to Google Drive, GitHub Releases, MediaFire, or another host.</p></div><div class="download-list">
-<div class="download-item"><div><span class="tag">LATEST</span><h3>Project Download</h3><p>Version 1.0 · Add your file size or other details here.</p></div><a class="btn primary small" href="https://example.com" target="_blank" rel="noopener">Download</a></div>
-<div class="download-item"><div><h3>Older Version</h3><p>Previous release or an alternative download.</p></div><a class="btn secondary small" href="https://example.com" target="_blank" rel="noopener">Download</a></div>
-</div></section></main><footer><p>© 2026 My Projects. Built with HTML, CSS & JS.</p></footer></div>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Download projects made by the Xeno Team.">
+<title>Downloads - Xeno Projects</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="page">
+
+<header class="navbar">
+<a class="logo" href="index.html">Xeno<span>Projects</span></a>
+
+<nav>
+<a class="nav-btn" href="index.html">⌂ Home</a>
+<a class="nav-btn" href="projects.html">▦ Projects</a>
+<a class="nav-btn active" href="downloads.html">↓ Downloads</a>
+<a class="nav-btn" href="links.html">↗ Links</a>
+</nav>
+</header>
+
+
+<main>
+
+<section class="project-hero">
+<p class="eyebrow">XENO PROJECTS</p>
+<h1>Downloads</h1>
+<p>
+Download the latest releases and files from our projects.
+</p>
+</section>
+
+
+<section class="download-section">
+
+<div class="download-grid">
+
+
+<!-- XENO LEGENDS -->
+
+<div class="download-card">
+
+<div class="download-icon">◈</div>
+
+<div class="download-info">
+<h2>Xeno Legends</h2>
+
+<p>
+A Dragon Ball Legends private server with additional
+resources and content compared to the original game.
+</p>
+
+<span class="download-type">Dragon Ball Legends • Private Server</span>
+</div>
+
+<a class="btn primary download-btn"
+href="YOUR_XENO_LEGENDS_LINK_HERE">
+↓ Download
+</a>
+
+</div>
+
+
+<!-- BANDAI CREATOR -->
+
+<div class="download-card">
+
+<div class="download-icon">◆</div>
+
+<div class="download-info">
+<h2>Bandai Creator</h2>
+
+<p>
+Creates Bandai accounts that can be used to link
+your Dragon Ball Legends accounts.
+</p>
+
+<span class="download-type">Account Utility</span>
+</div>
+
+<a class="btn primary download-btn"
+href="YOUR_BANDAI_CREATOR_LINK_HERE">
+↓ Download
+</a>
+
+</div>
+
+
+<!-- REZZY LEGENDS -->
+
+<div class="download-card">
+
+<div class="download-icon">★</div>
+
+<div class="download-info">
+<h2>Rezzy Legends</h2>
+
+<p>
+A Dragon Ball Legends summon simulator featuring
+characters and summon animations.
+</p>
+
+<span class="download-type">Dragon Ball Legends • Simulator</span>
+</div>
+
+<a class="btn primary download-btn"
+href="YOUR_REZZY_LEGENDS_LINK_HERE">
+↓ Download
+</a>
+
+</div>
+
+
+</div>
+</section>
+
+</main>
+
+
+<footer>
+<p>© 2026 Taha (TN). All Rights Reserved.</p>
+</footer>
+
+</div>
+
+
 <script>
-document.querySelectorAll('a[href$=".html"]').forEach(link=>{link.addEventListener("click",e=>{if(link.hostname!==location.hostname)return;e.preventDefault();document.body.classList.add("leaving");setTimeout(()=>location.href=link.href,180)})});
-window.addEventListener("pageshow",()=>document.body.classList.remove("leaving"));
-</script></body></html>
+document.querySelectorAll('a[href$=".html"]').forEach(link=>{
+link.addEventListener("click",e=>{
+if(link.hostname!==location.hostname)return;
+e.preventDefault();
+document.body.classList.add("leaving");
+setTimeout(()=>location.href=link.href,180)
+})
+});
+
+window.addEventListener("pageshow",()=>{
+document.body.classList.remove("leaving");
+});
+</script>
+
+</body>
+</html>
