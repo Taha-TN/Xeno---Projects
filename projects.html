@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Projects, downloads and links.">
+<title>Projects — My Projects</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+<header class="navbar">
+<a class="logo" href="index.html">MY<span>SITE</span></a>
+<nav>
+<a class="nav-btn" href="index.html">⌂ Home</a>
+<a class="nav-btn active" href="projects.html">▦ Projects</a>
+<a class="nav-btn" href="downloads.html">↓ Downloads</a>
+<a class="nav-btn" href="links.html">↗ Links</a>
+</nav>
+</header>
+
+<main>
+<section class="project-list-section">
+<div class="section-heading">
+<p class="eyebrow">PROJECTS</p>
+<h2>What I'm working on</h2>
+<p>Replace these examples with your own projects.</p>
+</div>
+
+<div class="project-card-grid">
+<article class="project-card">
+<div class="project-image">XENO LEGENDS</div>
+<div class="project-card-body">
+<span class="tag">PROJECT</span>
+<h3>Xeno Legends</h3>
+<p>Dragon Ball Legends private server with expanded resources and a different experience from the original game.</p>
+<a class="btn primary project-btn" href="xeno-legends.html">Explore Project</a>
+</div>
+</article>
+
+<article class="project-card">
+<div class="project-image">BANDAI CREATOR</div>
+<div class="project-card-body">
+<span class="tag">PROJECT</span>
+<h3>Bandai Creator</h3>
+<p>A tool for creating Bandai accounts that can be used to link with Dragon Ball Legends accounts.</p>
+<a class="btn primary project-btn" href="bandai-creator.html">Explore Project</a>
+</div>
+</article>
+
+<article class="project-card">
+<div class="project-image">REZZY LEGENDS</div>
+<div class="project-card-body">
+<span class="tag">PROJECT</span>
+<h3>Rezzy Legends</h3>
+<p>A Dragon Ball Legends summon simulator for experimenting with summons and characters.</p>
+<a class="btn primary project-btn" href="rezzy-legends.html">Explore Project</a>
+</div>
+</article>
+</div>
+</section>
+</main>
+
+<footer><p>© 2026 My Projects. Built with HTML, CSS & JS.</p></footer>
+</div>
+
+<script>
+document.querySelectorAll('a[href$=".html"]').forEach(link=>{link.addEventListener("click",e=>{if(link.hostname!==location.hostname)return;e.preventDefault();document.body.classList.add("leaving");setTimeout(()=>location.href=link.href,180)})});
+window.addEventListener("pageshow",()=>document.body.classList.remove("leaving"));
+</script>
+</body>
+</html>
