@@ -9,10 +9,22 @@
 </head>
 
 <body>
+
+<!-- INTRO SCREEN -->
+<div class="intro-screen">
+    <div class="intro-content">
+        <p>Made by</p>
+        <h1>Taha</h1>
+    </div>
+</div>
+
 <div class="page">
 
 <header class="navbar">
-<a class="logo" href="index.html">Xeno<span>Projects</span></a>
+
+<a class="logo" href="index.html">
+Xeno<span>Projects</span>
+</a>
 
 <nav>
 <a class="nav-btn active" href="index.html">⌂ Home</a>
@@ -20,78 +32,140 @@
 <a class="nav-btn" href="downloads.html">↓ Downloads</a>
 <a class="nav-btn" href="links.html">↗ Links</a>
 </nav>
+
 </header>
+
 
 <main>
 
 <section class="hero">
+
 <div class="hero-content">
 
-<p class="eyebrow">Welcome to Xeno Projects website</p>
+<p class="eyebrow">
+Welcome to Xeno Projects website
+</p>
 
-<h1>Xeno Projects</h1>
+<h1>
+Xeno Projects
+</h1>
 
 <p class="hero-text">
 A place designed to easily access the all the projects made by the Xeno Team.
 </p>
 
 <div class="hero-buttons">
-<a class="btn primary" href="projects.html">Explore Projects</a>
-<a class="btn secondary" href="downloads.html">Browse Downloads</a>
+
+<a class="btn primary" href="projects.html">
+Explore Projects
+</a>
+
+<a class="btn secondary" href="downloads.html">
+Browse Downloads
+</a>
+
 </div>
 
 </div>
+
 </section>
 
 
 <section class="quick-nav">
 
-<p class="quick-title">QUICK ACCESS</p>
+<p class="quick-title">
+QUICK ACCESS
+</p>
 
 <div class="block-grid">
 
 <a class="nav-block" href="projects.html">
+
 <div class="nav-icon">▦</div>
-<strong>Projects</strong>
-<span>Learn about all the projects →</span>
+
+<strong>
+Projects
+</strong>
+
+<span>
+Learn about all the projects →
+</span>
+
 </a>
+
 
 <a class="nav-block" href="downloads.html">
+
 <div class="nav-icon">↓</div>
-<strong>Downloads</strong>
-<span>Download files from here →</span>
+
+<strong>
+Downloads
+</strong>
+
+<span>
+Download files from here →
+</span>
+
 </a>
 
+
 <a class="nav-block" href="links.html">
+
 <div class="nav-icon">↗</div>
-<strong>Links</strong>
-<span>Socials of Xeno - Legends →</span>
+
+<strong>
+Links
+</strong>
+
+<span>
+Socials of Xeno - Legends →
+</span>
+
 </a>
 
 </div>
+
 </section>
 
 </main>
 
+
 <footer>
-<p>© 2026 Taha (TN). All Rights Reserved.</p>
+
+<p>
+© 2026 Taha (TN). All Rights Reserved.
+</p>
+
 </footer>
 
 </div>
 
+
 <script>
+
 document.querySelectorAll('a[href$=".html"]').forEach(link=>{
+
 link.addEventListener("click",e=>{
+
 if(link.hostname!==location.hostname)return;
+
 e.preventDefault();
+
 document.body.classList.add("leaving");
-setTimeout(()=>location.href=link.href,180)
-})
+
+setTimeout(()=>location.href=link.href,180);
+
 });
 
-window.addEventListener("pageshow",()=>{
-document.body.classList.remove("leaving");
 });
+
+
+window.addEventListener("pageshow",()=>{
+
+document.body.classList.remove("leaving");
+
+});
+
 </script>
 
 </body>
