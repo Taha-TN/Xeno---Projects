@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Xeno Projects is currently under maintenance.">
+<title>Maintenance - Xeno Projects</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+<header class="navbar">
+
+<a class="logo" href="index.html">
+Xeno<span>Projects</span>
+</a>
+
+<nav>
+<a class="nav-btn" href="index.html">⌂ Home</a>
+<a class="nav-btn" href="projects.html">▦ Projects</a>
+<a class="nav-btn" href="downloads.html">↓ Downloads</a>
+<a class="nav-btn" href="links.html">↗ Links</a>
+</nav>
+
+</header>
+
+<main>
+
+<section class="maintenance">
+
+<div class="maintenance-content">
+
+<p class="eyebrow">XENO PROJECTS</p>
+
+<div class="maintenance-icon">⚙</div>
+
+<h1>Under Maintenance</h1>
+
+<p>
+The Xeno Projects website is currently undergoing
+maintenance and improvements.
+</p>
+
+<p class="maintenance-subtext">
+We'll be back soon.
+</p>
+
+<div class="maintenance-line"></div>
+
+<span>Thank you for your patience.</span>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 Taha (TN). All Rights Reserved.</p>
+</footer>
+
+</div>
+
+<style>
+.maintenance{
+min-height:calc(100vh - 170px);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:70px 6%;
+text-align:center
+}
+
+.maintenance-content{
+max-width:700px;
+width:100%;
+padding:55px 35px;
+border:1px solid #252b38;
+border-radius:24px;
+background:linear-gradient(145deg,#10141d,#0d1119);
+box-shadow:
+0 18px 50px rgba(0,0,0,.25),
+0 0 35px rgba(92,116,255,.05);
+position:relative;
+overflow:hidden
+}
+
+.maintenance-content:before{
+content:"";
+position:absolute;
+width:220px;
+height:220px;
+border-radius:50%;
+right:-90px;
+top:-100px;
+background:rgba(94,113,199,.10);
+pointer-events:none
+}
+
+.maintenance-icon{
+font-size:48px;
+margin:25px 0 12px;
+color:#7892ff;
+animation:maintenanceSpin 4s linear infinite
+}
+
+.maintenance-content h1{
+font-size:clamp(40px,7vw,68px);
+line-height:1.05;
+letter-spacing:-3px;
+margin-bottom:18px;
+font-weight:900
+}
+
+.maintenance-content p{
+color:#aeb6c5;
+font-size:17px;
+max-width:570px;
+margin:0 auto
+}
+
+.maintenance-content .maintenance-subtext{
+color:#7892ff;
+font-weight:800;
+margin-top:8px
+}
+
+.maintenance-line{
+width:70px;
+height:2px;
+background:#667dff;
+margin:28px auto 18px;
+box-shadow:0 0 15px rgba(102,125,255,.35)
+}
+
+.maintenance-content span{
+font-size:13px;
+color:#858e9e
+}
+
+@keyframes maintenanceSpin{
+from{transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+}
+
+@media(max-width:700px){
+.maintenance{
+padding:45px 6%;
+min-height:calc(100vh - 150px)
+}
+
+.maintenance-content{
+padding:45px 22px
+}
+
+.maintenance-content h1{
+letter-spacing:-2px
+}
+}
+</style>
+
+</body>
+</html>
