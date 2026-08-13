@@ -22,12 +22,13 @@
 </nav>
 </header>
 
-
 <main>
 
 <section class="project-hero">
 <p class="eyebrow">XENO PROJECTS</p>
+
 <h1>Downloads</h1>
+
 <p>
 Download the latest releases and files of our projects.
 </p>
@@ -53,7 +54,9 @@ A Dragon Ball Legends private server with additional
 resources and content compared to the original game.
 </p>
 
-<span class="download-type">Dragon Ball Legends • Private Server</span>
+<span class="download-type">
+Dragon Ball Legends • Private Server
+</span>
 </div>
 
 <a class="btn primary download-btn"
@@ -66,7 +69,7 @@ href="YOUR_XENO_LEGENDS_LINK_HERE">
 
 <!-- BANDAI CREATOR -->
 
-<div class="download-card">
+<div class="download-card bandai-download-card">
 
 <div class="download-icon">◆</div>
 
@@ -81,10 +84,64 @@ your Dragon Ball Legends accounts.
 <span class="download-type">Account Utility</span>
 </div>
 
-<a class="btn primary download-btn"
-href="YOUR_BANDAI_CREATOR_LINK_HERE">
+<button
+class="btn primary download-btn"
+id="bandaiDownloadBtn"
+type="button">
 ↓ Download
+</button>
+
+
+<div class="platform-options" id="bandaiOptions">
+
+<a
+class="platform-block"
+href="YOUR_BANDAI_MAC_LINK_HERE"
+target="_blank"
+rel="noopener">
+
+<strong>🍎 Mac</strong>
+<span>Download for Mac →</span>
+
 </a>
+
+
+<a
+class="platform-block"
+href="YOUR_BANDAI_ANDROID_LINK_HERE"
+target="_blank"
+rel="noopener">
+
+<strong>🤖 Android</strong>
+<span>Download for Android →</span>
+
+</a>
+
+
+<a
+class="platform-block"
+href="YOUR_BANDAI_WINDOWS_LINK_HERE"
+target="_blank"
+rel="noopener">
+
+<strong>🪟 Windows x64/x86</strong>
+<span>Download for Windows →</span>
+
+</a>
+
+
+<a
+class="platform-block"
+href="YOUR_BANDAI_LINUX_LINK_HERE"
+target="_blank"
+rel="noopener">
+
+<strong>🐧 Linux</strong>
+<span>Download for Linux →</span>
+
+</a>
+
+</div>
 
 </div>
 
@@ -103,7 +160,9 @@ A Dragon Ball Legends summon simulator featuring
 characters and summon animations.
 </p>
 
-<span class="download-type">Dragon Ball Legends • Simulator</span>
+<span class="download-type">
+Dragon Ball Legends • Simulator
+</span>
 </div>
 
 <a class="btn primary download-btn"
@@ -128,18 +187,54 @@ href="YOUR_REZZY_LEGENDS_LINK_HERE">
 
 
 <script>
+
 document.querySelectorAll('a[href$=".html"]').forEach(link=>{
+
 link.addEventListener("click",e=>{
+
 if(link.hostname!==location.hostname)return;
+
 e.preventDefault();
+
 document.body.classList.add("leaving");
+
 setTimeout(()=>location.href=link.href,180)
+
 })
+
 });
 
+
 window.addEventListener("pageshow",()=>{
+
 document.body.classList.remove("leaving");
+
 });
+
+
+const bandaiButton =
+document.getElementById("bandaiDownloadBtn");
+
+const bandaiOptions =
+document.getElementById("bandaiOptions");
+
+
+bandaiButton.addEventListener("click",()=>{
+
+bandaiOptions.classList.toggle("show");
+
+if(bandaiOptions.classList.contains("show")){
+
+bandaiButton.textContent="↑ Hide Downloads";
+
+}else{
+
+bandaiButton.textContent="↓ Download";
+
+}
+
+});
+
 </script>
 
 </body>
