@@ -2032,3 +2032,490 @@ footer {
     }
 
 }
+/* =========================================================
+   PROJECT CARDS — NEW DESIGN
+========================================================= */
+
+.project-card-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:22px;
+    margin-top:32px;
+}
+
+.project-card{
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    min-height:500px;
+
+    border:1px solid #272d39;
+    border-radius:24px;
+
+    background:#0d1016;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.18);
+
+    transition:
+        transform .28s ease,
+        border-color .28s ease,
+        box-shadow .28s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+}
+
+
+/* PROJECT HEADER */
+
+.project-image{
+    position:relative;
+
+    min-height:210px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:30px;
+
+    overflow:hidden;
+
+    border-bottom:1px solid rgba(255,255,255,.07);
+
+    text-align:center;
+}
+
+
+/* Background decoration */
+
+.project-image::before{
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    top:-100px;
+    right:-70px;
+
+    opacity:.16;
+
+    filter:blur(3px);
+
+    transition:
+        transform .4s ease,
+        opacity .4s ease;
+}
+
+.project-image::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.04),
+            transparent 45%
+        );
+
+    pointer-events:none;
+}
+
+.project-card:hover .project-image::before{
+    transform:scale(1.25);
+
+    opacity:.24;
+}
+
+
+/* PROJECT NUMBER */
+
+.project-number{
+    position:absolute;
+
+    top:20px;
+    left:21px;
+
+    padding:6px 10px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:8px;
+
+    background:rgba(0,0,0,.18);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1.5px;
+
+    color:rgba(255,255,255,.58);
+}
+
+
+/* PROJECT NAME */
+
+.project-title{
+    position:relative;
+    z-index:2;
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    font-size:clamp(24px,2.3vw,31px);
+
+    font-weight:900;
+
+    letter-spacing:-1px;
+
+    color:#f7f8fb;
+
+    text-shadow:
+        0 4px 25px rgba(0,0,0,.3);
+}
+
+.project-line{
+    position:relative;
+    z-index:2;
+
+    width:42px;
+    height:3px;
+
+    margin-top:13px;
+
+    border-radius:99px;
+
+    transition:
+        width .3s ease;
+}
+
+.project-card:hover .project-line{
+    width:70px;
+}
+
+
+/* CARD CONTENT */
+
+.project-card-body{
+    display:flex;
+    flex-direction:column;
+
+    flex:1;
+
+    padding:25px 25px 24px;
+}
+
+.project-card .tag{
+    display:inline-flex;
+    align-items:center;
+
+    width:max-content;
+
+    padding:6px 9px;
+
+    margin-bottom:13px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:7px;
+
+    background:rgba(255,255,255,.025);
+
+    font-size:10px;
+
+    letter-spacing:1.3px;
+
+    font-weight:850;
+}
+
+.project-card-body h3{
+    margin-bottom:9px;
+
+    font-size:24px;
+
+    letter-spacing:-.5px;
+}
+
+.project-card-body p{
+    margin-bottom:25px;
+
+    color:#929baa;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+
+/* BUTTON */
+
+.project-btn{
+    width:100%;
+
+    min-height:48px;
+
+    margin-top:auto;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    border-radius:13px !important;
+
+    font-size:13px;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.btn-arrow{
+    font-size:18px;
+
+    transition:
+        transform .2s ease;
+}
+
+.project-btn:hover .btn-arrow{
+    transform:translateX(4px);
+}
+
+
+/* =========================================================
+   XENO LEGENDS
+========================================================= */
+
+.project-legends{
+    border-color:#293742;
+}
+
+.project-legends .project-image{
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,142,67,.13),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #121820,
+            #0c1016
+        );
+}
+
+.project-legends .project-image::before{
+    background:#ff8e43;
+}
+
+.project-legends .project-line{
+    background:#ff8e43;
+
+    box-shadow:
+        0 0 18px rgba(255,142,67,.35);
+}
+
+.project-legends .tag{
+    color:#ffad72;
+}
+
+.project-legends .project-btn{
+    background:#ff8e43;
+
+    color:#101216;
+
+    border-color:#ff8e43;
+
+    box-shadow:
+        0 8px 25px rgba(255,142,67,.12);
+}
+
+.project-legends:hover{
+    border-color:#a65e32;
+}
+
+.project-legends .project-btn:hover{
+    background:#ffad72;
+
+    box-shadow:
+        0 10px 32px rgba(255,142,67,.22);
+}
+
+
+/* =========================================================
+   BANDAI CREATOR
+========================================================= */
+
+.project-bandai{
+    border-color:#30343e;
+}
+
+.project-bandai .project-image{
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(83,220,190,.12),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #11191a,
+            #0c1114
+        );
+}
+
+.project-bandai .project-image::before{
+    background:#53dcbe;
+}
+
+.project-bandai .project-line{
+    background:#53dcbe;
+
+    box-shadow:
+        0 0 18px rgba(83,220,190,.3);
+}
+
+.project-bandai .tag{
+    color:#71e6cf;
+}
+
+.project-bandai .project-btn{
+    background:#53dcbe;
+
+    color:#081311;
+
+    border-color:#53dcbe;
+
+    box-shadow:
+        0 8px 25px rgba(83,220,190,.1);
+}
+
+.project-bandai:hover{
+    border-color:#398f7e;
+}
+
+.project-bandai .project-btn:hover{
+    background:#78e9d5;
+
+    box-shadow:
+        0 10px 32px rgba(83,220,190,.2);
+}
+
+
+/* =========================================================
+   REZZY LEGENDS
+========================================================= */
+
+.project-rezzy{
+    border-color:#34303c;
+}
+
+.project-rezzy .project-image{
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(190,112,255,.13),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #17121b,
+            #0f0c13
+        );
+}
+
+.project-rezzy .project-image::before{
+    background:#c070ff;
+}
+
+.project-rezzy .project-line{
+    background:#c070ff;
+
+    box-shadow:
+        0 0 18px rgba(192,112,255,.32);
+}
+
+.project-rezzy .tag{
+    color:#d095ff;
+}
+
+.project-rezzy .project-btn{
+    background:#c070ff;
+
+    color:#100a15;
+
+    border-color:#c070ff;
+
+    box-shadow:
+        0 8px 25px rgba(192,112,255,.11);
+}
+
+.project-rezzy:hover{
+    border-color:#8248ad;
+}
+
+.project-rezzy .project-btn:hover{
+    background:#d095ff;
+
+    box-shadow:
+        0 10px 32px rgba(192,112,255,.22);
+}
+
+
+/* =========================================================
+   MOBILE PROJECT CARDS
+========================================================= */
+
+@media(max-width:900px){
+
+    .project-card-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .project-card-grid{
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+    .project-card{
+        min-height:470px;
+    }
+
+    .project-image{
+        min-height:190px;
+    }
+
+    .project-title{
+        font-size:28px;
+    }
+}
