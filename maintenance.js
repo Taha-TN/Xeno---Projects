@@ -7,7 +7,7 @@ true  = WEBSITE UNDER MAINTENANCE
 false = WEBSITE LIVE
 */
 
-const MAINTENANCE_MODE = true;
+const MAINTENANCE_MODE = false;
 
 
 /*
