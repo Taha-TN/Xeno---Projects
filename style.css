@@ -2519,3 +2519,580 @@ footer {
         font-size:28px;
     }
 }
+/* =========================================================
+   INDIVIDUAL PROJECT PAGES
+========================================================= */
+
+.project-page{
+    --project-accent:#ff8e43;
+    --project-soft:rgba(255,142,67,.12);
+    --project-border:rgba(255,142,67,.28);
+}
+
+
+/* =========================================================
+   PROJECT HERO
+========================================================= */
+
+.project-page .project-hero{
+    position:relative;
+
+    min-height:460px;
+
+    display:flex;
+    align-items:center;
+
+    padding:90px 6% 70px;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            var(--project-soft),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #0d1016,
+            #090c11
+        );
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.project-hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:820px;
+}
+
+.project-badge{
+    display:inline-flex;
+
+    padding:7px 11px;
+
+    margin-bottom:18px;
+
+    border:1px solid var(--project-border);
+
+    border-radius:8px;
+
+    background:var(--project-soft);
+
+    color:var(--project-accent);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1.7px;
+}
+
+.project-page .project-hero .eyebrow{
+    color:#929baa;
+}
+
+.project-page .project-hero h1{
+    margin:8px 0 20px;
+
+    font-size:clamp(48px,8vw,82px);
+
+    line-height:.98;
+
+    letter-spacing:-4px;
+
+    font-weight:900;
+}
+
+.project-page .project-hero h1 span{
+    color:var(--project-accent);
+}
+
+.project-page .project-hero > .project-hero-content > p:last-child{
+    max-width:700px;
+
+    color:#aeb6c5;
+
+    font-size:18px;
+
+    line-height:1.75;
+}
+
+
+/* HERO ORB */
+
+.hero-orb{
+    position:absolute;
+
+    width:390px;
+    height:390px;
+
+    right:5%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border-radius:50%;
+
+    border:1px solid var(--project-border);
+
+    background:
+        radial-gradient(
+            circle,
+            var(--project-soft),
+            transparent 65%
+        );
+
+    box-shadow:
+        0 0 100px var(--project-soft);
+
+    opacity:.75;
+}
+
+.hero-orb::before,
+.hero-orb::after{
+    content:"";
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:1px solid var(--project-border);
+}
+
+.hero-orb::before{
+    inset:45px;
+}
+
+.hero-orb::after{
+    inset:100px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.project-page .back-row{
+    padding:30px 6% 0;
+}
+
+.project-page .back-row .btn{
+    border-color:rgba(255,255,255,.12);
+
+    background:#10141b;
+
+    color:#dce1ea;
+}
+
+.project-page .back-row .btn:hover{
+    border-color:var(--project-accent);
+
+    color:var(--project-accent);
+
+    background:var(--project-soft);
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.project-page .project-content{
+    padding:35px 6% 90px;
+
+    max-width:1050px;
+    margin:auto;
+}
+
+.project-page .info-grid{
+    margin:0 0 60px;
+
+    gap:18px;
+}
+
+.project-page .info-box{
+    position:relative;
+
+    padding:26px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #11151d,
+            #0d1118
+        );
+
+    overflow:hidden;
+}
+
+.project-page .info-box::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+    bottom:0;
+
+    width:3px;
+
+    background:var(--project-accent);
+
+    box-shadow:
+        0 0 18px var(--project-soft);
+}
+
+.info-label{
+    display:block;
+
+    margin-bottom:8px;
+
+    color:var(--project-accent);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+}
+
+.project-page .info-box h3{
+    margin-bottom:6px;
+
+    font-size:19px;
+}
+
+.project-page .info-box p{
+    color:#929baa;
+}
+
+
+/* CONTENT HEADING */
+
+.content-heading{
+    margin-bottom:25px;
+}
+
+.content-heading h2{
+    margin-top:5px;
+
+    font-size:clamp(30px,5vw,45px);
+
+    letter-spacing:-1.5px;
+}
+
+.content-heading .eyebrow{
+    color:var(--project-accent);
+}
+
+
+/* =========================================================
+   FEATURE LIST
+========================================================= */
+
+.project-page .feature-list{
+    display:grid;
+
+    gap:12px;
+
+    margin:0 0 35px;
+}
+
+.project-page .feature{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:20px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    border-radius:15px;
+
+    background:#0f131a;
+
+    color:#c3c9d4;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+}
+
+.project-page .feature:hover{
+    transform:translateX(4px);
+
+    border-color:var(--project-border);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--project-soft),
+            #0f131a
+        );
+}
+
+.project-page .feature > span{
+    flex:0 0 34px;
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--project-border);
+
+    border-radius:9px;
+
+    background:var(--project-soft);
+
+    color:var(--project-accent);
+
+    font-size:10px;
+
+    font-weight:900;
+}
+
+.project-page .feature strong{
+    display:block;
+
+    margin-bottom:3px;
+
+    color:#f1f3f7;
+
+    font-size:15px;
+}
+
+.project-page .feature p{
+    color:#858e9e;
+
+    font-size:13px;
+
+    line-height:1.55;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.project-page .disclaimer{
+    margin-top:40px;
+
+    padding:22px 24px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    border-left:3px solid var(--project-accent);
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--project-soft),
+            #0e1219
+        );
+
+    color:#858e9e;
+}
+
+.project-page .disclaimer strong{
+    display:block;
+
+    margin-bottom:6px;
+
+    color:#dce1e8;
+
+    font-size:13px;
+}
+
+.project-page .disclaimer p{
+    font-size:13px;
+
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   XENO LEGENDS — ORANGE
+========================================================= */
+
+.theme-legends{
+    --project-accent:#ff8e43;
+    --project-soft:rgba(255,142,67,.11);
+    --project-border:rgba(255,142,67,.28);
+}
+
+.theme-legends .hero-orb{
+    transform:translateY(-50%) rotate(15deg);
+}
+
+.theme-legends .project-hero{
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(255,142,67,.13),
+            transparent 28%
+        ),
+        linear-gradient(
+            145deg,
+            #111419,
+            #090c11
+        );
+}
+
+
+/* =========================================================
+   BANDAI CREATOR — TEAL
+========================================================= */
+
+.theme-bandai{
+    --project-accent:#53dcbe;
+    --project-soft:rgba(83,220,190,.10);
+    --project-border:rgba(83,220,190,.28);
+}
+
+.theme-bandai .project-hero{
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(83,220,190,.12),
+            transparent 28%
+        ),
+        linear-gradient(
+            145deg,
+            #0d1516,
+            #090d10
+        );
+}
+
+.theme-bandai .hero-orb{
+    border-radius:28%;
+    transform:translateY(-50%) rotate(12deg);
+}
+
+
+/* =========================================================
+   REZZY LEGENDS — MAGENTA
+========================================================= */
+
+.theme-rezzy{
+    --project-accent:#c070ff;
+    --project-soft:rgba(192,112,255,.11);
+    --project-border:rgba(192,112,255,.28);
+}
+
+.theme-rezzy .project-hero{
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(192,112,255,.14),
+            transparent 29%
+        ),
+        linear-gradient(
+            145deg,
+            #151018,
+            #0b0b10
+        );
+}
+
+.theme-rezzy .hero-orb{
+    border-radius:50%;
+
+    box-shadow:
+        0 0 100px rgba(192,112,255,.10);
+}
+
+.theme-rezzy .hero-orb::before{
+    transform:rotate(45deg);
+}
+
+
+/* =========================================================
+   PROJECT PAGE MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+    .project-page .project-hero{
+        min-height:430px;
+
+        padding-top:65px;
+        padding-bottom:55px;
+    }
+
+    .hero-orb{
+        width:250px;
+        height:250px;
+
+        right:-100px;
+
+        opacity:.45;
+    }
+
+    .project-page .project-hero h1{
+        font-size:clamp(45px,13vw,68px);
+
+        letter-spacing:-3px;
+    }
+
+    .project-page .project-hero > .project-hero-content > p:last-child{
+        font-size:16px;
+    }
+
+    .project-page .project-content{
+        padding-bottom:65px;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .project-page .project-hero{
+        padding-left:7%;
+        padding-right:7%;
+    }
+
+    .project-page .project-content{
+        padding-left:6%;
+        padding-right:6%;
+    }
+
+    .project-page .info-grid{
+        grid-template-columns:1fr;
+
+        margin-bottom:45px;
+    }
+
+    .project-page .feature{
+        padding:17px;
+
+        gap:13px;
+    }
+
+    .project-page .feature > span{
+        flex-basis:30px;
+
+        width:30px;
+        height:30px;
+    }
+
+    .project-page .back-row{
+        padding-left:6%;
+        padding-right:6%;
+    }
+
+   }
