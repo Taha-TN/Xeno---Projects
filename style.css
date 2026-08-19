@@ -2191,3 +2191,572 @@ animation:none !important
 }
 
 }
+
+/* =========================================================
+   XENO PROJECTS — PROJECT COLOR SYSTEM
+   ========================================================= */
+
+:root {
+    --xeno-orange: #ff8a3d;
+    --xeno-orange-soft: rgba(255,138,61,.16);
+
+    --bandai-teal: #39d6b4;
+    --bandai-teal-soft: rgba(57,214,180,.15);
+
+    --rezzy-violet: #9b6cff;
+    --rezzy-violet-soft: rgba(155,108,255,.16);
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+.project-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 430px;
+
+    border: 1px solid #252b38;
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #11151e,
+            #0c1017
+        );
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+}
+
+
+/* Project image */
+
+.project-card .project-image {
+    min-height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    border-bottom: 1px solid #252b38;
+
+    overflow: hidden;
+}
+
+.project-image-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.project-image-content strong {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.project-number {
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    opacity: .7;
+}
+
+.project-type {
+    margin-top: 8px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    opacity: .55;
+}
+
+
+/* XENO */
+
+.xeno-card {
+    --project-color: var(--xeno-orange);
+    --project-soft: var(--xeno-orange-soft);
+}
+
+.xeno-card .project-image {
+    color: var(--xeno-orange);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,138,61,.18),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #18130f,
+            #0d1016
+        );
+}
+
+.xeno-card .project-image:before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(255,138,61,.20);
+
+    filter: blur(45px);
+}
+
+.xeno-card:hover {
+    border-color: rgba(255,138,61,.65);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35),
+        0 0 35px rgba(255,138,61,.09);
+}
+
+
+/* BANDAI */
+
+.bandai-card {
+    --project-color: var(--bandai-teal);
+    --project-soft: var(--bandai-teal-soft);
+}
+
+.bandai-card .project-image {
+    color: var(--bandai-teal);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(57,214,180,.17),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #0d1817,
+            #0c1016
+        );
+}
+
+.bandai-card .project-image:before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(57,214,180,.18);
+
+    filter: blur(45px);
+}
+
+.bandai-card:hover {
+    border-color: rgba(57,214,180,.65);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35),
+        0 0 35px rgba(57,214,180,.09);
+}
+
+
+/* REZZY */
+
+.rezzy-card {
+    --project-color: var(--rezzy-violet);
+    --project-soft: var(--rezzy-violet-soft);
+}
+
+.rezzy-card .project-image {
+    color: var(--rezzy-violet);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(155,108,255,.18),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #15111c,
+            #0d1017
+        );
+}
+
+.rezzy-card .project-image:before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(155,108,255,.20);
+
+    filter: blur(45px);
+}
+
+.rezzy-card:hover {
+    border-color: rgba(155,108,255,.65);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35),
+        0 0 35px rgba(155,108,255,.09);
+}
+
+
+/* Card body */
+
+.project-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    padding: 25px;
+}
+
+.project-card-body .tag {
+    color: var(--project-color);
+}
+
+.project-card-body p {
+    color: #9ca5b5;
+}
+
+.project-card-body .project-btn {
+    margin-top: auto;
+
+    color: var(--project-color);
+
+    background: transparent;
+
+    border-color: rgba(255,255,255,.14);
+}
+
+.project-card-body .project-btn:hover {
+    color: #080a0f;
+
+    background: var(--project-color);
+
+    border-color: var(--project-color);
+
+    box-shadow:
+        0 10px 30px var(--project-soft);
+}
+
+
+/* =========================================================
+   DOWNLOAD CARDS
+   ========================================================= */
+
+.download-card {
+    position: relative;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* XENO DOWNLOAD */
+
+.xeno-download {
+    --project-color: var(--xeno-orange);
+    --project-soft: var(--xeno-orange-soft);
+
+    border-left: 3px solid var(--xeno-orange);
+}
+
+.xeno-download .download-icon {
+    color: var(--xeno-orange);
+}
+
+.xeno-download .download-btn {
+    background: var(--xeno-orange);
+    border-color: var(--xeno-orange);
+    color: #111;
+}
+
+.xeno-download:hover {
+    border-color: rgba(255,138,61,.55);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.28),
+        0 0 30px rgba(255,138,61,.08);
+}
+
+
+/* BANDAI DOWNLOAD */
+
+.bandai-download {
+    --project-color: var(--bandai-teal);
+    --project-soft: var(--bandai-teal-soft);
+
+    border-left: 3px solid var(--bandai-teal);
+}
+
+.bandai-download .download-icon {
+    color: var(--bandai-teal);
+}
+
+.bandai-download .download-btn {
+    background: var(--bandai-teal);
+    border-color: var(--bandai-teal);
+    color: #071310;
+}
+
+.bandai-download:hover {
+    border-color: rgba(57,214,180,.55);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.28),
+        0 0 30px rgba(57,214,180,.08);
+}
+
+.bandai-download .platform-block:hover {
+    border-color: var(--bandai-teal);
+
+    box-shadow:
+        0 12px 30px rgba(57,214,180,.10);
+}
+
+
+/* REZZY DOWNLOAD */
+
+.rezzy-download {
+    --project-color: var(--rezzy-violet);
+    --project-soft: var(--rezzy-violet-soft);
+
+    border-left: 3px solid var(--rezzy-violet);
+}
+
+.rezzy-download .download-icon {
+    color: var(--rezzy-violet);
+}
+
+.rezzy-download .download-btn {
+    background: var(--rezzy-violet);
+    border-color: var(--rezzy-violet);
+    color: #100a18;
+}
+
+.rezzy-download:hover {
+    border-color: rgba(155,108,255,.55);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.28),
+        0 0 30px rgba(155,108,255,.08);
+}
+
+
+/* =========================================================
+   INDIVIDUAL PROJECT PAGES
+   ========================================================= */
+
+.project-page {
+    --project-color: #7892ff;
+    --project-soft: rgba(120,146,255,.14);
+}
+
+
+/* XENO PAGE */
+
+.project-page.xeno-theme {
+    --project-color: var(--xeno-orange);
+    --project-soft: var(--xeno-orange-soft);
+}
+
+.xeno-theme .project-hero {
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(255,138,61,.18),
+            transparent 34%
+        );
+}
+
+.xeno-theme .project-hero h1,
+.xeno-theme .eyebrow,
+.xeno-theme .feature::first-letter {
+    color: var(--xeno-orange);
+}
+
+.xeno-theme .info-box {
+    border-top: 2px solid rgba(255,138,61,.55);
+}
+
+.xeno-theme .feature {
+    border-left: 2px solid rgba(255,138,61,.45);
+}
+
+.xeno-theme .disclaimer {
+    border-left-color: var(--xeno-orange);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,138,61,.07),
+            #10141c
+        );
+}
+
+
+/* BANDAI PAGE */
+
+.project-page.bandai-theme {
+    --project-color: var(--bandai-teal);
+    --project-soft: var(--bandai-teal-soft);
+}
+
+.bandai-theme .project-hero {
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(57,214,180,.17),
+            transparent 34%
+        );
+}
+
+.bandai-theme .project-hero h1,
+.bandai-theme .eyebrow {
+    color: var(--bandai-teal);
+}
+
+.bandai-theme .info-box {
+    border-top: 2px solid rgba(57,214,180,.55);
+}
+
+.bandai-theme .feature {
+    border-left: 2px solid rgba(57,214,180,.45);
+}
+
+.bandai-theme .disclaimer {
+    border-left-color: var(--bandai-teal);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(57,214,180,.07),
+            #10141c
+        );
+}
+
+
+/* REZZY PAGE */
+
+.project-page.rezzy-theme {
+    --project-color: var(--rezzy-violet);
+    --project-soft: var(--rezzy-violet-soft);
+}
+
+.rezzy-theme .project-hero {
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(155,108,255,.18),
+            transparent 34%
+        );
+}
+
+.rezzy-theme .project-hero h1,
+.rezzy-theme .eyebrow {
+    color: var(--rezzy-violet);
+}
+
+.rezzy-theme .info-box {
+    border-top: 2px solid rgba(155,108,255,.55);
+}
+
+.rezzy-theme .feature {
+    border-left: 2px solid rgba(155,108,255,.45);
+}
+
+.rezzy-theme .disclaimer {
+    border-left-color: var(--rezzy-violet);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(155,108,255,.07),
+            #10141c
+        );
+}
+
+
+/* Project page buttons */
+
+.project-page .back-row .btn.secondary:hover {
+    border-color: var(--project-color);
+    color: var(--project-color);
+
+    background: var(--project-soft);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .project-card-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .project-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: 390px;
+    }
+
+    .project-card .project-image {
+        min-height: 165px;
+    }
+
+}
