@@ -27,30 +27,68 @@ Xeno<span>Projects</span>
 
 </header>
 
+
 <main>
 
 <section class="maintenance">
 
 <div class="maintenance-content">
 
-<p class="eyebrow">XENO PROJECTS</p>
+<div class="maintenance-badge">
+<span class="maintenance-dot"></span>
+SITE STATUS
+</div>
 
-<div class="maintenance-icon">⚙</div>
 
-<h1>Under Maintenance</h1>
+<div class="maintenance-symbol">
+⚙
+</div>
 
-<p>
-The Xeno Projects website is currently undergoing
-maintenance and improvements.
+
+<p class="eyebrow">
+XENO PROJECTS
 </p>
 
-<p class="maintenance-subtext">
-We'll be back soon.
+
+<h1>
+Under
+<span>Maintenance</span>
+</h1>
+
+
+<p class="maintenance-description">
+Xeno Projects is currently undergoing maintenance
+and improvements. We're working behind the scenes
+to make the website better.
 </p>
+
+
+<div class="maintenance-status">
+
+<div class="status-item">
+<strong>01</strong>
+<span>Updating</span>
+</div>
+
+<div class="status-item">
+<strong>02</strong>
+<span>Improving</span>
+</div>
+
+<div class="status-item">
+<strong>03</strong>
+<span>Coming back soon</span>
+</div>
+
+</div>
+
 
 <div class="maintenance-line"></div>
 
-<span>Thank you for your patience.</span>
+
+<p class="maintenance-note">
+Thank you for your patience.
+</p>
 
 </div>
 
@@ -58,109 +96,397 @@ We'll be back soon.
 
 </main>
 
+
 <footer>
 <p>© 2026 Taha (TN). All Rights Reserved.</p>
 </footer>
 
 </div>
 
+
 <style>
+
+/* =========================
+   MAINTENANCE PAGE
+   ========================= */
+
 .maintenance{
 min-height:calc(100vh - 170px);
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 padding:70px 6%;
-text-align:center
+
+text-align:center;
 }
+
+
+/* CARD */
 
 .maintenance-content{
-max-width:700px;
 width:100%;
-padding:55px 35px;
-border:1px solid #252b38;
-border-radius:24px;
-background:linear-gradient(145deg,#10141d,#0d1119);
+max-width:780px;
+
+padding:55px 45px;
+
+border:1px solid #29323a;
+
+border-radius:28px;
+
+background:
+linear-gradient(
+145deg,
+#111820,
+#0b1015
+);
+
 box-shadow:
-0 18px 50px rgba(0,0,0,.25),
-0 0 35px rgba(92,116,255,.05);
+0 25px 70px rgba(0,0,0,.35);
+
 position:relative;
-overflow:hidden
+overflow:hidden;
 }
 
-.maintenance-content:before{
+
+/* DECORATIVE LIGHT */
+
+.maintenance-content::before{
 content:"";
+
 position:absolute;
-width:220px;
-height:220px;
+
+width:360px;
+height:360px;
+
 border-radius:50%;
-right:-90px;
-top:-100px;
-background:rgba(94,113,199,.10);
-pointer-events:none
+
+right:-180px;
+top:-190px;
+
+background:
+radial-gradient(
+circle,
+rgba(90,200,170,.13),
+transparent 68%
+);
+
+pointer-events:none;
 }
 
-.maintenance-icon{
-font-size:48px;
-margin:25px 0 12px;
-color:#7892ff;
-animation:maintenanceSpin 4s linear infinite
+
+.maintenance-content::after{
+content:"";
+
+position:absolute;
+
+width:280px;
+height:280px;
+
+border-radius:50%;
+
+left:-170px;
+bottom:-180px;
+
+background:
+radial-gradient(
+circle,
+rgba(90,140,210,.10),
+transparent 70%
+);
+
+pointer-events:none;
 }
+
+
+/* STATUS BADGE */
+
+.maintenance-badge{
+display:inline-flex;
+
+align-items:center;
+
+gap:9px;
+
+padding:8px 14px;
+
+border:1px solid #29343a;
+
+border-radius:999px;
+
+background:#0c1318;
+
+color:#89969e;
+
+font-size:11px;
+
+font-weight:800;
+
+letter-spacing:2px;
+}
+
+
+.maintenance-dot{
+width:7px;
+height:7px;
+
+border-radius:50%;
+
+background:#e8b45f;
+
+box-shadow:
+0 0 12px rgba(232,180,95,.55);
+}
+
+
+/* ICON */
+
+.maintenance-symbol{
+width:76px;
+height:76px;
+
+margin:28px auto 18px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:22px;
+
+border:1px solid #314039;
+
+background:
+linear-gradient(
+145deg,
+#16221f,
+#101817
+);
+
+color:#63d9b2;
+
+font-size:34px;
+
+box-shadow:
+0 12px 35px rgba(0,0,0,.25);
+
+animation:
+maintenanceSpin 7s linear infinite;
+}
+
+
+/* EYEBROW */
+
+.maintenance-content .eyebrow{
+font-size:12px;
+
+letter-spacing:3px;
+
+font-weight:800;
+
+color:#74818a;
+
+margin-bottom:8px;
+}
+
+
+/* TITLE */
 
 .maintenance-content h1{
-font-size:clamp(40px,7vw,68px);
-line-height:1.05;
-letter-spacing:-3px;
-margin-bottom:18px;
-font-weight:900
+font-size:clamp(45px,8vw,78px);
+
+line-height:.98;
+
+letter-spacing:-4px;
+
+font-weight:900;
+
+margin-bottom:22px;
+
+color:#f2f6f5;
 }
 
-.maintenance-content p{
-color:#aeb6c5;
+
+.maintenance-content h1 span{
+color:#63d9b2;
+}
+
+
+/* DESCRIPTION */
+
+.maintenance-description{
+max-width:610px;
+
+margin:auto;
+
 font-size:17px;
-max-width:570px;
-margin:0 auto
+
+line-height:1.7;
+
+color:#9aa7ae;
 }
 
-.maintenance-content .maintenance-subtext{
-color:#7892ff;
-font-weight:800;
-margin-top:8px
+
+/* STATUS BOXES */
+
+.maintenance-status{
+display:grid;
+
+grid-template-columns:
+repeat(3,minmax(0,1fr));
+
+gap:12px;
+
+max-width:620px;
+
+margin:35px auto 5px;
 }
+
+
+.status-item{
+padding:17px 12px;
+
+border:1px solid #252f35;
+
+border-radius:16px;
+
+background:#0e151a;
+
+display:flex;
+
+flex-direction:column;
+
+gap:4px;
+}
+
+
+.status-item strong{
+font-size:13px;
+
+letter-spacing:1px;
+
+color:#63d9b2;
+}
+
+
+.status-item span{
+font-size:12px;
+
+color:#78858d;
+}
+
+
+/* DIVIDER */
 
 .maintenance-line{
-width:70px;
+width:65px;
+
 height:2px;
-background:#667dff;
-margin:28px auto 18px;
-box-shadow:0 0 15px rgba(102,125,255,.35)
+
+margin:30px auto 17px;
+
+background:#63d9b2;
+
+box-shadow:
+0 0 15px rgba(99,217,178,.3);
 }
 
-.maintenance-content span{
+
+/* FOOT NOTE */
+
+.maintenance-note{
 font-size:13px;
-color:#858e9e
+
+color:#68757d;
 }
+
 
 @keyframes maintenanceSpin{
-from{transform:rotate(0deg)}
-to{transform:rotate(360deg)}
+
+from{
+transform:rotate(0deg);
 }
 
+to{
+transform:rotate(360deg);
+}
+
+}
+
+
+/* MOBILE */
+
 @media(max-width:700px){
+
 .maintenance{
-padding:45px 6%;
-min-height:calc(100vh - 150px)
+padding:45px 5%;
 }
 
 .maintenance-content{
-padding:45px 22px
+padding:42px 20px;
+
+border-radius:22px;
 }
 
 .maintenance-content h1{
-letter-spacing:-2px
+font-size:clamp(42px,13vw,62px);
+
+letter-spacing:-3px;
 }
+
+.maintenance-description{
+font-size:15px;
 }
+
+.maintenance-status{
+grid-template-columns:1fr;
+
+gap:9px;
+}
+
+.status-item{
+padding:13px;
+}
+
+.maintenance-symbol{
+width:68px;
+height:68px;
+
+font-size:30px;
+}
+
+}
+
 </style>
+
+
+<script>
+
+document.querySelectorAll('a[href$=".html"]').forEach(link=>{
+
+link.addEventListener("click",e=>{
+
+if(link.hostname!==location.hostname)return;
+
+e.preventDefault();
+
+document.body.classList.add("leaving");
+
+setTimeout(()=>location.href=link.href,180);
+
+});
+
+});
+
+
+window.addEventListener("pageshow",()=>{
+
+document.body.classList.remove("leaving");
+
+});
+
+</script>
 
 </body>
 </html>
