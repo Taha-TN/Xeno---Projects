@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Rezzy Legends project information.">
+<meta name="description" content="Rezzy Legends project.">
 <title>Xeno Project - Rezzy Legends</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="project-page theme-rezzy">
+<body class="project-page rezzy-theme">
 
 <div class="page">
 
 <header class="navbar">
 
 <a class="logo" href="index.html">
-Xeno<span>Project</span>
+Xeno<span>Projects</span>
 </a>
 
 <nav>
@@ -32,33 +33,25 @@ Xeno<span>Project</span>
 
 <section class="project-hero">
 
-<div class="project-hero-content">
+<p class="eyebrow">PROJECT 03</p>
 
-<div class="project-badge">
-PROJECT 03
-</div>
-
-<p class="eyebrow">XENO PROJECTS / SIMULATOR</p>
-
-<h1>Rezzy <span>Legends</span></h1>
+<h1>Rezzy Legends</h1>
 
 <p>
-Rezzy Legends is a Dragon Ball Legends summon simulator for
-experimenting with summons and characters without using real
-in-game resources.
+Rezzy Legends is a Dragon Ball Legends summon simulator
+for experimenting with summons and characters without
+using real in-game resources.
 </p>
-
-</div>
-
-<div class="hero-orb"></div>
 
 </section>
 
 
 <div class="back-row">
+
 <a class="btn secondary small" href="projects.html">
 ← Back to Projects
 </a>
+
 </div>
 
 
@@ -67,13 +60,11 @@ in-game resources.
 <div class="info-grid">
 
 <div class="info-box">
-<span class="info-label">PROJECT</span>
 <h3>Project Name</h3>
 <p>Rezzy Legends</p>
 </div>
 
 <div class="info-box">
-<span class="info-label">CATEGORY</span>
 <h3>Type</h3>
 <p>Summon simulator</p>
 </div>
@@ -81,44 +72,24 @@ in-game resources.
 </div>
 
 
-<div class="content-heading">
-<p class="eyebrow">FEATURES</p>
-<h2>Project Highlights</h2>
-</div>
-
+<h2>Highlights</h2>
 
 <div class="feature-list">
 
 <div class="feature">
-<span>01</span>
-<div>
-<strong>Dragon Ball Legends summon simulation</strong>
-<p>Experience simulated summons without using real resources.</p>
-</div>
+▸ Dragon Ball Legends summon simulation
 </div>
 
 <div class="feature">
-<span>02</span>
-<div>
-<strong>Character-based summon system</strong>
-<p>Experiment with character-focused summon scenarios.</p>
-</div>
+▸ Character-based summon system
 </div>
 
 <div class="feature">
-<span>03</span>
-<div>
-<strong>Experiment freely</strong>
-<p>Explore summons without spending real in-game resources.</p>
-</div>
+▸ Experiment without spending real in-game resources
 </div>
 
 <div class="feature">
-<span>04</span>
-<div>
-<strong>Standalone simulator experience</strong>
-<p>A dedicated simulator separate from the original game.</p>
-</div>
+▸ Standalone simulator experience
 </div>
 
 </div>
@@ -126,12 +97,8 @@ in-game resources.
 
 <div class="disclaimer">
 
-<strong>Disclaimer</strong>
-
-<p>
 Dragon Ball and Dragon Ball Legends are trademarks of their
 respective owners. This is an independent simulator project.
-</p>
 
 </div>
 
@@ -144,23 +111,34 @@ respective owners. This is an independent simulator project.
 <p>© 2026 Taha (TN). All Rights Reserved.</p>
 </footer>
 
+</div>
+
 
 <script>
-document.querySelectorAll('a[href$=".html"]').forEach(link=>{
-link.addEventListener("click",e=>{
-if(link.hostname!==location.hostname)return;
+
+document.querySelectorAll('a[href$=".html"]').forEach(link => {
+
+link.addEventListener("click", e => {
+
+if (link.hostname !== location.hostname) return;
+
 e.preventDefault();
+
 document.body.classList.add("leaving");
-setTimeout(()=>location.href=link.href,180);
-});
+
+setTimeout(() => {
+location.href = link.href;
+}, 180);
+
 });
 
-window.addEventListener("pageshow",()=>{
+});
+
+window.addEventListener("pageshow", () => {
 document.body.classList.remove("leaving");
 });
-</script>
 
-</div>
+</script>
 
 </body>
 </html>
