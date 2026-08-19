@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Xeno Legends project information.">
+<meta name="description" content="Xeno Legends project.">
 <title>Xeno Project - Xeno Legends</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="project-page theme-legends">
+<body class="project-page xeno-theme">
 
 <div class="page">
 
 <header class="navbar">
 
 <a class="logo" href="index.html">
-Xeno<span>Project</span>
+Xeno<span>Projects</span>
 </a>
 
 <nav>
@@ -32,15 +33,9 @@ Xeno<span>Project</span>
 
 <section class="project-hero">
 
-<div class="project-hero-content">
+<p class="eyebrow">PROJECT 01</p>
 
-<div class="project-badge">
-PROJECT 01
-</div>
-
-<p class="eyebrow">XENO PROJECTS / LEGENDS</p>
-
-<h1>Xeno <span>Legends</span></h1>
+<h1>Xeno Legends</h1>
 
 <p>
 Xeno Legends is a Dragon Ball Legends private server project
@@ -48,17 +43,15 @@ designed to provide an alternative experience with significantly
 more resources than the original game.
 </p>
 
-</div>
-
-<div class="hero-orb"></div>
-
 </section>
 
 
 <div class="back-row">
+
 <a class="btn secondary small" href="projects.html">
 ← Back to Projects
 </a>
+
 </div>
 
 
@@ -67,13 +60,11 @@ more resources than the original game.
 <div class="info-grid">
 
 <div class="info-box">
-<span class="info-label">PROJECT</span>
 <h3>Project Name</h3>
 <p>Xeno Legends</p>
 </div>
 
 <div class="info-box">
-<span class="info-label">CATEGORY</span>
 <h3>Type</h3>
 <p>Private server</p>
 </div>
@@ -81,44 +72,24 @@ more resources than the original game.
 </div>
 
 
-<div class="content-heading">
-<p class="eyebrow">FEATURES</p>
-<h2>Project Highlights</h2>
-</div>
-
+<h2>Highlights</h2>
 
 <div class="feature-list">
 
 <div class="feature">
-<span>01</span>
-<div>
-<strong>Expanded resources</strong>
-<p>Additional resources designed around the project experience.</p>
-</div>
+▸ Expanded resources
 </div>
 
 <div class="feature">
-<span>02</span>
-<div>
-<strong>Private-server environment</strong>
-<p>A separate environment built around Dragon Ball Legends.</p>
-</div>
+▸ Private-server environment
 </div>
 
 <div class="feature">
-<span>03</span>
-<div>
-<strong>Additional resources</strong>
-<p>More resources compared with the original game experience.</p>
-</div>
+▸ Additional resources compared with the original game
 </div>
 
 <div class="feature">
-<span>04</span>
-<div>
-<strong>Dragon Ball Legends-focused experience</strong>
-<p>A project centered around the Legends experience.</p>
-</div>
+▸ Dragon Ball Legends-focused experience
 </div>
 
 </div>
@@ -126,14 +97,10 @@ more resources than the original game.
 
 <div class="disclaimer">
 
-<strong>Disclaimer</strong>
-
-<p>
 Dragon Ball and Dragon Ball Legends are trademarks of their
 respective owners. This is an independent project and is not
 affiliated with or endorsed by Bandai Namco Entertainment or
 the Dragon Ball Legends development team.
-</p>
 
 </div>
 
@@ -146,23 +113,34 @@ the Dragon Ball Legends development team.
 <p>© 2026 Taha (TN). All Rights Reserved.</p>
 </footer>
 
+</div>
+
 
 <script>
-document.querySelectorAll('a[href$=".html"]').forEach(link=>{
-link.addEventListener("click",e=>{
-if(link.hostname!==location.hostname)return;
+
+document.querySelectorAll('a[href$=".html"]').forEach(link => {
+
+link.addEventListener("click", e => {
+
+if (link.hostname !== location.hostname) return;
+
 e.preventDefault();
+
 document.body.classList.add("leaving");
-setTimeout(()=>location.href=link.href,180);
-});
+
+setTimeout(() => {
+location.href = link.href;
+}, 180);
+
 });
 
-window.addEventListener("pageshow",()=>{
+});
+
+window.addEventListener("pageshow", () => {
 document.body.classList.remove("leaving");
 });
-</script>
 
-</div>
+</script>
 
 </body>
 </html>
