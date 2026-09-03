@@ -118,26 +118,40 @@ the Dragon Ball Legends development team.
 
 <script>
 
-document.querySelectorAll('a[href$=".html"]').forEach(link => {
+document.querySelectorAll('a[href]').forEach(link => {
 
-link.addEventListener("click", e => {
+    link.addEventListener('click', e => {
 
-if (link.hostname !== location.hostname) return;
+        const url = link.href;
 
-e.preventDefault();
+        if (
+            link.target === '_blank' ||
+            link.hasAttribute('download') ||
+            url.startsWith('mailto:') ||
+            url.startsWith('tel:') ||
+            (
+                link.origin === location.origin &&
+                link.pathname === location.pathname &&
+                link.hash
+            )
+        ) {
+            return;
+        }
 
-document.body.classList.add("leaving");
+        e.preventDefault();
 
-setTimeout(() => {
-location.href = link.href;
-}, 180);
+        document.body.classList.add('leaving');
+
+        setTimeout(() => {
+            window.location.href = url;
+        }, 220);
+
+    });
 
 });
 
-});
-
-window.addEventListener("pageshow", () => {
-document.body.classList.remove("leaving");
+window.addEventListener('pageshow', () => {
+    document.body.classList.remove('leaving');
 });
 
 </script>
