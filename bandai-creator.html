@@ -135,6 +135,41 @@ document.body.classList.remove("leaving");
 });
 
 </script>
+    <!-- Your existing scripts -->
+
+    <script>
+    document.querySelectorAll('a[href]').forEach(link => {
+
+        link.addEventListener('click', e => {
+
+            const url = link.href;
+
+            if (
+                link.target === '_blank' ||
+                link.hasAttribute('download') ||
+                url.startsWith('mailto:') ||
+                url.startsWith('tel:') ||
+                (
+                    link.origin === location.origin &&
+                    link.pathname === location.pathname &&
+                    link.hash
+                )
+            ) {
+                return;
+            }
+
+            e.preventDefault();
+
+            document.body.classList.add('leaving');
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 220);
+
+        });
+
+    });
+    </script>
 
 </body>
 </html>
