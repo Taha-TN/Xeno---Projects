@@ -3305,3 +3305,381 @@ animation:none !important
     }
 
 }
+
+/* =========================================================
+   LIVE UI MOTION
+   Subtle animations — keeps existing colors/styles intact
+   ========================================================= */
+
+/* Page entrance */
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: pageEnter .45s ease both;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+@keyframes navFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+.nav-btn {
+    animation: navFloat 3.5s ease-in-out infinite;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+@keyframes buttonFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-1.5px);
+    }
+}
+
+.btn {
+    animation: buttonFloat 3.2s ease-in-out infinite;
+}
+
+.btn:hover,
+.btn:active {
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+@keyframes cardFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+.project-card,
+.download-card,
+.card,
+.link-card {
+    animation: cardFloat 5s ease-in-out infinite;
+}
+
+.project-card:hover,
+.download-card:hover,
+.card:hover,
+.link-card:hover {
+    animation-play-state: paused;
+}
+
+
+/* Give different cards slightly different timing */
+.project-card:nth-child(2),
+.download-card:nth-child(2),
+.card:nth-child(2),
+.link-card:nth-child(2) {
+    animation-delay: .4s;
+}
+
+.project-card:nth-child(3),
+.download-card:nth-child(3),
+.card:nth-child(3),
+.link-card:nth-child(3) {
+    animation-delay: .8s;
+}
+
+
+/* =========================================================
+   CARD LIGHT SWEEP
+   Uses the card's existing styling instead of adding colors
+   ========================================================= */
+
+@keyframes cardSweep {
+    from {
+        transform: translateX(-120%);
+    }
+
+    to {
+        transform: translateX(120%);
+    }
+}
+
+.project-card,
+.download-card,
+.card,
+.link-card {
+    overflow: hidden;
+}
+
+.project-card::after,
+.download-card::after,
+.card::after,
+.link-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 35%;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.045),
+        transparent
+    );
+    transform: translateX(-120%);
+    animation: cardSweep 5s ease-in-out infinite;
+}
+
+.project-card:hover::after,
+.download-card:hover::after,
+.card:hover::after,
+.link-card:hover::after {
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   ICONS
+   ========================================================= */
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-3px) rotate(1deg);
+    }
+}
+
+.icon,
+.card-icon,
+.project-icon {
+    animation: iconFloat 3.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ARROWS / CHEVRONS
+   ========================================================= */
+
+@keyframes arrowPulse {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+}
+
+.arrow,
+.card-arrow,
+.link-arrow {
+    animation: arrowPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   HERO BACKGROUND MOTION
+   No new project colors
+   ========================================================= */
+
+@keyframes softDrift {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(8px, -6px, 0);
+    }
+}
+
+.home-hero::before,
+.hero-orb,
+.orb-one,
+.orb-two,
+.download-hero-glow {
+    animation: softDrift 8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PROJECT IMAGES
+   ========================================================= */
+
+@keyframes imageBreath {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.012);
+    }
+}
+
+.project-image img {
+    animation: imageBreath 5s ease-in-out infinite;
+}
+
+.project-card:hover .project-image img {
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+@keyframes linkShine {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .82;
+    }
+}
+
+.text-link {
+    animation: linkShine 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PLATFORM OPTIONS
+   ========================================================= */
+
+@keyframes platformFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+.platform-option {
+    animation: platformFloat 4s ease-in-out infinite;
+}
+
+.platform-option:hover {
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   CLICK FEEDBACK
+   ========================================================= */
+
+@keyframes clickPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.96);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn:active,
+.nav-btn:active,
+.platform-option:active {
+    animation: clickPop .18s ease;
+}
+
+
+/* =========================================================
+   PROJECT-SPECIFIC ACCENTS
+   Only applies where the project already has its class.
+   ========================================================= */
+
+.project-xeno .project-image {
+    box-shadow: 0 0 24px rgba(255, 138, 61, .14);
+}
+
+.project-bandai .project-image {
+    box-shadow: 0 0 24px rgba(57, 214, 180, .14);
+}
+
+.project-rezzy .project-image {
+    box-shadow: 0 0 24px rgba(155, 108, 255, .14);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .nav-btn,
+    .btn {
+        animation-duration: 4s;
+    }
+
+    .project-card,
+    .download-card,
+    .card,
+    .link-card {
+        animation-duration: 6s;
+    }
+
+    .project-image img {
+        animation-duration: 6s;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
