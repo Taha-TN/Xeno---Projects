@@ -2,12 +2,17 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="Bandai Creator project.">
+
 <title>Xeno Project - Bandai Creator</title>
+
 <link rel="stylesheet" href="style.css">
 <script src="maintenance.js"></script>
+
 </head>
 
 <body class="project-page bandai-theme">
@@ -21,10 +26,12 @@ Xeno<span>Projects</span>
 </a>
 
 <nav>
-<a class="nav-btn" href="index.html">⌂ Home</a>
-<a class="nav-btn active" href="projects.html">▦ Projects</a>
-<a class="nav-btn" href="downloads.html">↓ Downloads</a>
-<a class="nav-btn" href="links.html">↗ Links</a>
+
+<a class="nav-btn" href="index.html">Home</a>
+<a class="nav-btn active" href="projects.html">Projects</a>
+<a class="nav-btn" href="downloads.html">Downloads</a>
+<a class="nav-btn" href="links.html">Links</a>
+
 </nav>
 
 </header>
@@ -114,38 +121,31 @@ terms and policies of the services involved.
 
 document.querySelectorAll('a[href]').forEach(link => {
 
-    link.addEventListener('click', e => {
+link.addEventListener('click', e => {
 
-        const url = link.href;
+if (
+link.target === '_blank' ||
+link.hasAttribute('download') ||
+link.href.startsWith('mailto:') ||
+link.href.startsWith('tel:')
+) {
+return;
+}
 
-        if (
-            link.target === '_blank' ||
-            link.hasAttribute('download') ||
-            url.startsWith('mailto:') ||
-            url.startsWith('tel:') ||
-            (
-                link.origin === location.origin &&
-                link.pathname === location.pathname &&
-                link.hash
-            )
-        ) {
-            return;
-        }
+e.preventDefault();
 
-        e.preventDefault();
+document.body.classList.add('leaving');
 
-        document.body.classList.add('leaving');
+setTimeout(() => {
+window.location.href = link.href;
+}, 220);
 
-        setTimeout(() => {
-            window.location.href = url;
-        }, 220);
-
-    });
+});
 
 });
 
 window.addEventListener('pageshow', () => {
-    document.body.classList.remove('leaving');
+document.body.classList.remove('leaving');
 });
 
 </script>
