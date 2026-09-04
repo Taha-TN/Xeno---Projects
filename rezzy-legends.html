@@ -2,12 +2,17 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="Rezzy Legends project.">
+
 <title>Xeno Project - Rezzy Legends</title>
+
 <link rel="stylesheet" href="style.css">
 <script src="maintenance.js"></script>
+
 </head>
 
 <body class="project-page rezzy-theme">
@@ -21,10 +26,12 @@ Xeno<span>Projects</span>
 </a>
 
 <nav>
-<a class="nav-btn" href="index.html">⌂ Home</a>
-<a class="nav-btn active" href="projects.html">▦ Projects</a>
-<a class="nav-btn" href="downloads.html">↓ Downloads</a>
-<a class="nav-btn" href="links.html">↗ Links</a>
+
+<a class="nav-btn" href="index.html">Home</a>
+<a class="nav-btn active" href="projects.html">Projects</a>
+<a class="nav-btn" href="downloads.html">Downloads</a>
+<a class="nav-btn" href="links.html">Links</a>
+
 </nav>
 
 </header>
@@ -39,9 +46,9 @@ Xeno<span>Projects</span>
 <h1>Rezzy Legends</h1>
 
 <p>
-Rezzy Legends is a Dragon Ball Legends summon simulator
-for experimenting with summons and characters without
-using real in-game resources.
+Rezzy Legends is a Dragon Ball Legends Sandbox is a
+Dragon Ball Legends experience made to enjoy the game
+and summon for characters without using real in-game resources.
 </p>
 
 </section>
@@ -67,7 +74,7 @@ using real in-game resources.
 
 <div class="info-box">
 <h3>Type</h3>
-<p>Summon simulator</p>
+<p>Sandbox</p>
 </div>
 
 </div>
@@ -78,19 +85,16 @@ using real in-game resources.
 <div class="feature-list">
 
 <div class="feature">
-▸ Dragon Ball Legends summon simulation
+▸ Dragon Ball Legends Sandbox
 </div>
 
-<div class="feature">
-▸ Character-based summon system
-</div>
 
 <div class="feature">
 ▸ Experiment without spending real in-game resources
 </div>
 
 <div class="feature">
-▸ Standalone simulator experience
+▸ Standalone Sandbox experience
 </div>
 
 </div>
@@ -99,7 +103,7 @@ using real in-game resources.
 <div class="disclaimer">
 
 Dragon Ball and Dragon Ball Legends are trademarks of their
-respective owners. This is an independent simulator project.
+respective owners. This is an independent sandbox project.
 
 </div>
 
@@ -119,38 +123,31 @@ respective owners. This is an independent simulator project.
 
 document.querySelectorAll('a[href]').forEach(link => {
 
-    link.addEventListener('click', e => {
+link.addEventListener('click', e => {
 
-        const url = link.href;
+if (
+link.target === '_blank' ||
+link.hasAttribute('download') ||
+link.href.startsWith('mailto:') ||
+link.href.startsWith('tel:')
+) {
+return;
+}
 
-        if (
-            link.target === '_blank' ||
-            link.hasAttribute('download') ||
-            url.startsWith('mailto:') ||
-            url.startsWith('tel:') ||
-            (
-                link.origin === location.origin &&
-                link.pathname === location.pathname &&
-                link.hash
-            )
-        ) {
-            return;
-        }
+e.preventDefault();
 
-        e.preventDefault();
+document.body.classList.add('leaving');
 
-        document.body.classList.add('leaving');
+setTimeout(() => {
+window.location.href = link.href;
+}, 220);
 
-        setTimeout(() => {
-            window.location.href = url;
-        }, 220);
-
-    });
+});
 
 });
 
 window.addEventListener('pageshow', () => {
-    document.body.classList.remove('leaving');
+document.body.classList.remove('leaving');
 });
 
 </script>
