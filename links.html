@@ -2,17 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="description" content="Projects, downloads and links.">
-
 <title>Links — Xeno Projects</title>
-
 <link rel="stylesheet" href="style.css">
 <script src="maintenance.js"></script>
-
 </head>
 
 <body>
@@ -47,7 +42,6 @@ Links
 
 </header>
 
-
 <main>
 
 <section class="section">
@@ -58,9 +52,9 @@ Links
 LINKS
 </p>
 
-<h1>
+<h2>
 Find us online
-</h1>
+</h2>
 
 <p>
 Find me and Xeno Team online.
@@ -68,9 +62,7 @@ Find me and Xeno Team online.
 
 </div>
 
-
 <div class="link-grid">
-
 
 <a
 class="link-card"
@@ -79,9 +71,7 @@ target="_blank"
 rel="noopener"
 >
 
-<div class="link-icon">
-→
-</div>
+<div class="link-icon">→</div>
 
 <strong>
 Social
@@ -93,7 +83,6 @@ My Linktree →
 
 </a>
 
-
 <a
 class="link-card"
 href="https://discord.gg/xenolegends"
@@ -101,9 +90,7 @@ target="_blank"
 rel="noopener"
 >
 
-<div class="link-icon">
-→
-</div>
+<div class="link-icon">→</div>
 
 <strong>
 Xeno - Legends Discord
@@ -115,13 +102,11 @@ Join the Xeno - Legends Discord →
 
 </a>
 
-
 </div>
 
 </section>
 
 </main>
-
 
 <footer>
 
@@ -133,18 +118,24 @@ Join the Xeno - Legends Discord →
 
 </div>
 
-
 <script>
 
 document.querySelectorAll('a[href]').forEach(link => {
 
 link.addEventListener('click', e => {
 
+const url = link.href;
+
 if (
 link.target === '_blank' ||
 link.hasAttribute('download') ||
-link.href.startsWith('mailto:') ||
-link.href.startsWith('tel:')
+url.startsWith('mailto:') ||
+url.startsWith('tel:') ||
+(
+link.origin === location.origin &&
+link.pathname === location.pathname &&
+link.hash
+)
 ) {
 return;
 }
@@ -154,7 +145,7 @@ e.preventDefault();
 document.body.classList.add('leaving');
 
 setTimeout(() => {
-window.location.href = link.href;
+window.location.href = url;
 }, 220);
 
 });
