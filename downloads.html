@@ -2,17 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="description" content="Download projects made by the Xeno Team.">
-
 <title>Downloads - Xeno Projects</title>
-
 <link rel="stylesheet" href="style.css">
 <script src="maintenance.js"></script>
-
 </head>
 
 <body class="downloads-page">
@@ -48,15 +43,13 @@ Download the latest releases and files from our projects.
 
 </section>
 
-
 <section class="download-section">
 
 <div class="download-grid">
 
-
 <div class="download-card xeno-download">
 
-<div class="download-icon">01</div>
+<div class="download-icon">X</div>
 
 <div class="download-info">
 
@@ -76,15 +69,14 @@ Dragon Ball Legends • Private Server
 <a
 class="btn download-btn"
 href="YOUR_XENO_LEGENDS_LINK_HERE">
-Download →
+Download <span class="btn-arrow">→</span>
 </a>
 
 </div>
 
+<div class="download-card bandai-download">
 
-<div class="download-card bandai-download-card">
-
-<div class="download-icon">02</div>
+<div class="download-icon">B</div>
 
 <div class="download-info">
 
@@ -105,9 +97,8 @@ Account Utility
 class="btn download-btn"
 id="bandaiDownloadBtn"
 type="button">
-Download →
+Download <span class="btn-arrow">→</span>
 </button>
-
 
 <div class="platform-options" id="bandaiOptions">
 
@@ -116,10 +107,8 @@ class="platform-block"
 href="https://www.mediafire.com/file/nm6xq3btpe92rq6/Bandai-Creator-v3.0.0-iOS-Simulator.zip/file"
 target="_blank"
 rel="noopener">
-
 <strong>Mac</strong>
 <span>Download →</span>
-
 </a>
 
 <a
@@ -127,10 +116,8 @@ class="platform-block"
 href="https://www.mediafire.com/file/am87c69u3b952aj/Bandai-Creator-v3.0.0-Android.apk/file"
 target="_blank"
 rel="noopener">
-
 <strong>Android</strong>
 <span>Download →</span>
-
 </a>
 
 <a
@@ -138,10 +125,8 @@ class="platform-block"
 href="https://www.mediafire.com/file/9ujoktbtwajk2yl/Bandai-Creator-v3.0.0-x64.zip/file"
 target="_blank"
 rel="noopener">
-
 <strong>Windows x64/x86</strong>
 <span>Download →</span>
-
 </a>
 
 <a
@@ -149,32 +134,29 @@ class="platform-block"
 href="https://www.mediafire.com/file/gbifhm5nw7go7ny/Bandai-Creator-v3.0.0-Linux-ARM64.zip/file"
 target="_blank"
 rel="noopener">
-
 <strong>Linux</strong>
 <span>Download →</span>
-
 </a>
 
 </div>
 
 </div>
 
-
 <div class="download-card rezzy-download">
 
-<div class="download-icon">03</div>
+<div class="download-icon">R</div>
 
 <div class="download-info">
 
 <h2>Rezzy Legends</h2>
 
 <p>
-A Dragon Ball Legends summon simulator featuring
-characters and summon animations.
+A Dragon Ball Legends sandbox project for experimenting
+with characters, systems and ideas.
 </p>
 
 <span class="download-type">
-Dragon Ball Legends • Simulator
+Dragon Ball Legends • Sandbox
 </span>
 
 </div>
@@ -182,11 +164,10 @@ Dragon Ball Legends • Simulator
 <a
 class="btn download-btn"
 href="YOUR_REZZY_LEGENDS_LINK_HERE">
-Download →
+Download <span class="btn-arrow">→</span>
 </a>
 
 </div>
-
 
 </div>
 
@@ -200,8 +181,39 @@ Download →
 
 </div>
 
-
 <script>
+
+document.querySelectorAll('a[href]').forEach(link => {
+
+link.addEventListener('click', e => {
+
+const url = link.href;
+
+if (
+link.target === '_blank' ||
+link.hasAttribute('download') ||
+url.startsWith('mailto:') ||
+url.startsWith('tel:') ||
+(
+link.origin === location.origin &&
+link.pathname === location.pathname &&
+link.hash
+)
+) {
+return;
+}
+
+e.preventDefault();
+
+document.body.classList.add('leaving');
+
+setTimeout(() => {
+window.location.href = url;
+}, 220);
+
+});
+
+});
 
 const bandaiButton =
 document.getElementById("bandaiDownloadBtn");
@@ -215,43 +227,24 @@ bandaiButton.addEventListener("click", () => {
 
 bandaiOptions.classList.toggle("show");
 
-bandaiButton.textContent =
-bandaiOptions.classList.contains("show")
-? "Hide Downloads ↑"
-: "Download →";
+if (bandaiOptions.classList.contains("show")) {
+
+bandaiButton.innerHTML =
+'Hide Downloads <span class="btn-arrow">↑</span>';
+
+} else {
+
+bandaiButton.innerHTML =
+'Download <span class="btn-arrow">→</span>';
+
+}
 
 });
 
 }
 
-
-document.querySelectorAll('a[href]').forEach(link => {
-
-link.addEventListener('click', e => {
-
-if (
-link.target === '_blank' ||
-link.hasAttribute('download') ||
-link.href.startsWith('mailto:') ||
-link.href.startsWith('tel:')
-) {
-return;
-}
-
-e.preventDefault();
-
-document.body.classList.add('leaving');
-
-setTimeout(() => {
-window.location.href = link.href;
-}, 220);
-
-});
-
-});
-
-window.addEventListener('pageshow', () => {
-document.body.classList.remove('leaving');
+window.addEventListener("pageshow", () => {
+document.body.classList.remove("leaving");
 });
 
 </script>
