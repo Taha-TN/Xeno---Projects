@@ -4,8 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description" content="Projects, downloads and links.">
 
@@ -13,13 +12,12 @@
 
 <link rel="stylesheet" href="style.css">
 <script src="maintenance.js"></script>
-</head>
 
+</head>
 
 <body>
 
 <div class="page">
-
 
 <header class="navbar">
 
@@ -27,23 +25,22 @@
 Xeno<span>Projects</span>
 </a>
 
-
 <nav>
 
 <a class="nav-btn" href="index.html">
-⌂ Home
+Home
 </a>
 
 <a class="nav-btn" href="projects.html">
-▦ Projects
+Projects
 </a>
 
 <a class="nav-btn" href="downloads.html">
-↓ Downloads
+Downloads
 </a>
 
 <a class="nav-btn active" href="links.html">
-↗ Links
+Links
 </a>
 
 </nav>
@@ -55,16 +52,15 @@ Xeno<span>Projects</span>
 
 <section class="section">
 
-
 <div class="section-heading">
 
 <p class="eyebrow">
 LINKS
 </p>
 
-<h2>
+<h1>
 Find us online
-</h2>
+</h1>
 
 <p>
 Find me and Xeno Team online.
@@ -76,8 +72,6 @@ Find me and Xeno Team online.
 <div class="link-grid">
 
 
-<!-- SOCIAL LINK -->
-
 <a
 class="link-card"
 href="https://linktr.ee/Taha_TN"
@@ -86,7 +80,7 @@ rel="noopener"
 >
 
 <div class="link-icon">
-↗
+→
 </div>
 
 <strong>
@@ -100,8 +94,6 @@ My Linktree →
 </a>
 
 
-<!-- TEAM WEBSITE -->
-
 <a
 class="link-card"
 href="https://discord.gg/xenolegends"
@@ -110,7 +102,7 @@ rel="noopener"
 >
 
 <div class="link-icon">
-◈
+→
 </div>
 
 <strong>
@@ -144,65 +136,36 @@ Join the Xeno - Legends Discord →
 
 <script>
 
-document.querySelectorAll('a[href$=".html"]').forEach(link=>{
+document.querySelectorAll('a[href]').forEach(link => {
 
-link.addEventListener("click",e=>{
+link.addEventListener('click', e => {
 
-if(link.hostname!==location.hostname)return;
+if (
+link.target === '_blank' ||
+link.hasAttribute('download') ||
+link.href.startsWith('mailto:') ||
+link.href.startsWith('tel:')
+) {
+return;
+}
 
 e.preventDefault();
 
-document.body.classList.add("leaving");
+document.body.classList.add('leaving');
 
-setTimeout(()=>location.href=link.href,180);
+setTimeout(() => {
+window.location.href = link.href;
+}, 220);
 
 });
 
 });
 
-
-window.addEventListener("pageshow",()=>{
-
-document.body.classList.remove("leaving");
-
+window.addEventListener('pageshow', () => {
+document.body.classList.remove('leaving');
 });
 
 </script>
-<!-- Your existing scripts -->
 
-    <script>
-    document.querySelectorAll('a[href]').forEach(link => {
-
-        link.addEventListener('click', e => {
-
-            const url = link.href;
-
-            if (
-                link.target === '_blank' ||
-                link.hasAttribute('download') ||
-                url.startsWith('mailto:') ||
-                url.startsWith('tel:') ||
-                (
-                    link.origin === location.origin &&
-                    link.pathname === location.pathname &&
-                    link.hash
-                )
-            ) {
-                return;
-            }
-
-            e.preventDefault();
-
-            document.body.classList.add('leaving');
-
-            setTimeout(() => {
-                window.location.href = url;
-            }, 220);
-
-        });
-
-    });
-    </script>
 </body>
-
 </html>
