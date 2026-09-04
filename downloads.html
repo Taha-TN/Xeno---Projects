@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="Download projects made by the Xeno Team.">
+
 <title>Downloads - Xeno Projects</title>
+
 <link rel="stylesheet" href="style.css">
-  <script src="maintenance.js"></script>
+<script src="maintenance.js"></script>
+
 </head>
 
 <body class="downloads-page">
@@ -21,14 +26,13 @@ Xeno<span>Projects</span>
 </a>
 
 <nav>
-<a class="nav-btn" href="index.html">⌂ Home</a>
-<a class="nav-btn" href="projects.html">▦ Projects</a>
-<a class="nav-btn active" href="downloads.html">↓ Downloads</a>
-<a class="nav-btn" href="links.html">↗ Links</a>
+<a class="nav-btn" href="index.html">Home</a>
+<a class="nav-btn" href="projects.html">Projects</a>
+<a class="nav-btn active" href="downloads.html">Downloads</a>
+<a class="nav-btn" href="links.html">Links</a>
 </nav>
 
 </header>
-
 
 <main>
 
@@ -50,11 +54,9 @@ Download the latest releases and files from our projects.
 <div class="download-grid">
 
 
-<!-- XENO LEGENDS -->
-
 <div class="download-card xeno-download">
 
-<div class="download-icon">◈</div>
+<div class="download-icon">01</div>
 
 <div class="download-info">
 
@@ -74,17 +76,15 @@ Dragon Ball Legends • Private Server
 <a
 class="btn download-btn"
 href="YOUR_XENO_LEGENDS_LINK_HERE">
-↓ Download
+Download →
 </a>
 
 </div>
 
 
-<!-- BANDAI CREATOR -->
+<div class="download-card bandai-download-card">
 
-<div class="download-card bandai-download-card bandai-download">
-
-<div class="download-icon">◆</div>
+<div class="download-icon">02</div>
 
 <div class="download-info">
 
@@ -105,7 +105,7 @@ Account Utility
 class="btn download-btn"
 id="bandaiDownloadBtn"
 type="button">
-↓ Download
+Download →
 </button>
 
 
@@ -117,11 +117,10 @@ href="https://www.mediafire.com/file/nm6xq3btpe92rq6/Bandai-Creator-v3.0.0-iOS-S
 target="_blank"
 rel="noopener">
 
-<strong>🍎 Mac</strong>
-<span>Download for Mac →</span>
+<strong>Mac</strong>
+<span>Download →</span>
 
 </a>
-
 
 <a
 class="platform-block"
@@ -129,11 +128,10 @@ href="https://www.mediafire.com/file/am87c69u3b952aj/Bandai-Creator-v3.0.0-Andro
 target="_blank"
 rel="noopener">
 
-<strong>🤖 Android</strong>
-<span>Download for Android →</span>
+<strong>Android</strong>
+<span>Download →</span>
 
 </a>
-
 
 <a
 class="platform-block"
@@ -141,11 +139,10 @@ href="https://www.mediafire.com/file/9ujoktbtwajk2yl/Bandai-Creator-v3.0.0-x64.z
 target="_blank"
 rel="noopener">
 
-<strong>🪟 Windows x64/x86</strong>
-<span>Download for Windows →</span>
+<strong>Windows x64/x86</strong>
+<span>Download →</span>
 
 </a>
-
 
 <a
 class="platform-block"
@@ -153,8 +150,8 @@ href="https://www.mediafire.com/file/gbifhm5nw7go7ny/Bandai-Creator-v3.0.0-Linux
 target="_blank"
 rel="noopener">
 
-<strong>🐧 Linux</strong>
-<span>Download for Linux →</span>
+<strong>Linux</strong>
+<span>Download →</span>
 
 </a>
 
@@ -163,11 +160,9 @@ rel="noopener">
 </div>
 
 
-<!-- REZZY LEGENDS -->
-
 <div class="download-card rezzy-download">
 
-<div class="download-icon">★</div>
+<div class="download-icon">03</div>
 
 <div class="download-info">
 
@@ -187,7 +182,7 @@ Dragon Ball Legends • Simulator
 <a
 class="btn download-btn"
 href="YOUR_REZZY_LEGENDS_LINK_HERE">
-↓ Download
+Download →
 </a>
 
 </div>
@@ -199,7 +194,6 @@ href="YOUR_REZZY_LEGENDS_LINK_HERE">
 
 </main>
 
-
 <footer>
 <p>© 2026 Taha (TN). All Rights Reserved.</p>
 </footer>
@@ -208,29 +202,6 @@ href="YOUR_REZZY_LEGENDS_LINK_HERE">
 
 
 <script>
-
-document.querySelectorAll('a[href$=".html"]').forEach(link => {
-
-link.addEventListener("click", e => {
-
-if (link.hostname !== location.hostname) return;
-
-e.preventDefault();
-
-document.body.classList.add("leaving");
-
-setTimeout(() => {
-location.href = link.href;
-}, 180);
-
-});
-
-});
-
-window.addEventListener("pageshow", () => {
-document.body.classList.remove("leaving");
-});
-
 
 const bandaiButton =
 document.getElementById("bandaiDownloadBtn");
@@ -244,57 +215,46 @@ bandaiButton.addEventListener("click", () => {
 
 bandaiOptions.classList.toggle("show");
 
-if (bandaiOptions.classList.contains("show")) {
-
-bandaiButton.textContent = "↑ Hide Downloads";
-
-} else {
-
-bandaiButton.textContent = "↓ Download";
-
-}
+bandaiButton.textContent =
+bandaiOptions.classList.contains("show")
+? "Hide Downloads ↑"
+: "Download →";
 
 });
 
 }
 
+
+document.querySelectorAll('a[href]').forEach(link => {
+
+link.addEventListener('click', e => {
+
+if (
+link.target === '_blank' ||
+link.hasAttribute('download') ||
+link.href.startsWith('mailto:') ||
+link.href.startsWith('tel:')
+) {
+return;
+}
+
+e.preventDefault();
+
+document.body.classList.add('leaving');
+
+setTimeout(() => {
+window.location.href = link.href;
+}, 220);
+
+});
+
+});
+
+window.addEventListener('pageshow', () => {
+document.body.classList.remove('leaving');
+});
+
 </script>
-</script>
-    <!-- Your existing scripts -->
-
-    <script>
-    document.querySelectorAll('a[href]').forEach(link => {
-
-        link.addEventListener('click', e => {
-
-            const url = link.href;
-
-            if (
-                link.target === '_blank' ||
-                link.hasAttribute('download') ||
-                url.startsWith('mailto:') ||
-                url.startsWith('tel:') ||
-                (
-                    link.origin === location.origin &&
-                    link.pathname === location.pathname &&
-                    link.hash
-                )
-            ) {
-                return;
-            }
-
-            e.preventDefault();
-
-            document.body.classList.add('leaving');
-
-            setTimeout(() => {
-                window.location.href = url;
-            }, 220);
-
-        });
-
-    });
-    </script>
 
 </body>
 </html>
