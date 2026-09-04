@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="description" content="Explore Xeno Projects.">
 <title>Projects - Xeno Projects</title>
-
 <link rel="stylesheet" href="style.css">
 <script src="maintenance.js"></script>
 </head>
@@ -32,10 +30,9 @@ Xeno<span>Projects</span>
 
 <main>
 
-<section class="section">
+<section class="project-list-section">
 
 <div class="section-heading">
-
 <p class="eyebrow">XENO PROJECTS</p>
 
 <h1>Our Projects</h1>
@@ -43,7 +40,6 @@ Xeno<span>Projects</span>
 <p>
 Explore the projects currently being developed and maintained by the Xeno Team.
 </p>
-
 </div>
 
 <div class="project-card-grid">
@@ -70,13 +66,12 @@ to provide an alternative experience with expanded resources.
 </p>
 
 <a class="btn project-btn" href="xeno-legends.html">
-Explore Project →
+Explore Project <span class="btn-arrow">→</span>
 </a>
 
 </div>
 
 </article>
-
 
 <article class="project-card bandai-card">
 
@@ -100,13 +95,12 @@ for use with Dragon Ball Legends account linking.
 </p>
 
 <a class="btn project-btn" href="bandai-creator.html">
-Explore Project →
+Explore Project <span class="btn-arrow">→</span>
 </a>
 
 </div>
 
 </article>
-
 
 <article class="project-card rezzy-card">
 
@@ -114,7 +108,7 @@ Explore Project →
 <div class="project-image-content">
 <span class="project-number">03</span>
 <strong>REZZY LEGENDS</strong>
-<span class="project-type">SUMMON SIMULATOR</span>
+<span class="project-type">SANDBOX</span>
 </div>
 </div>
 
@@ -125,12 +119,12 @@ Explore Project →
 <h3>Rezzy Legends</h3>
 
 <p>
-A Dragon Ball Legends summon simulator for experimenting
-with characters, summons and animations.
+A Dragon Ball Legends sandbox project for experimenting
+with characters, systems and ideas in a standalone environment.
 </p>
 
 <a class="btn project-btn" href="rezzy-legends.html">
-Explore Project →
+Explore Project <span class="btn-arrow">→</span>
 </a>
 
 </div>
@@ -152,31 +146,39 @@ Explore Project →
 <script>
 document.querySelectorAll('a[href]').forEach(link => {
 
-    link.addEventListener('click', e => {
+link.addEventListener('click', e => {
 
-        if (
-            link.target === '_blank' ||
-            link.hasAttribute('download') ||
-            link.href.startsWith('mailto:') ||
-            link.href.startsWith('tel:')
-        ) {
-            return;
-        }
+if (
+link.target === '_blank' ||
+link.hasAttribute('download') ||
+link.href.startsWith('mailto:') ||
+link.href.startsWith('tel:')
+) {
+return;
+}
 
-        e.preventDefault();
+if (
+link.origin === location.origin &&
+link.pathname === location.pathname &&
+link.hash
+) {
+return;
+}
 
-        document.body.classList.add('leaving');
+e.preventDefault();
 
-        setTimeout(() => {
-            window.location.href = link.href;
-        }, 220);
+document.body.classList.add('leaving');
 
-    });
+setTimeout(() => {
+window.location.href = link.href;
+}, 220);
+
+});
 
 });
 
 window.addEventListener('pageshow', () => {
-    document.body.classList.remove('leaving');
+document.body.classList.remove('leaving');
 });
 </script>
 
