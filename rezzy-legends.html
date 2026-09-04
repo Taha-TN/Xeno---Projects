@@ -2,17 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Rezzy Legends project.">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Rezzy Legends sandbox project.">
 <title>Xeno Project - Rezzy Legends</title>
-
 <link rel="stylesheet" href="style.css">
 <script src="maintenance.js"></script>
-
 </head>
 
 <body class="project-page rezzy-theme">
@@ -26,16 +21,13 @@ Xeno<span>Projects</span>
 </a>
 
 <nav>
-
 <a class="nav-btn" href="index.html">Home</a>
 <a class="nav-btn active" href="projects.html">Projects</a>
 <a class="nav-btn" href="downloads.html">Downloads</a>
 <a class="nav-btn" href="links.html">Links</a>
-
 </nav>
 
 </header>
-
 
 <main>
 
@@ -46,13 +38,12 @@ Xeno<span>Projects</span>
 <h1>Rezzy Legends</h1>
 
 <p>
-Rezzy Legends is a Dragon Ball Legends Sandbox is a
-Dragon Ball Legends experience made to enjoy the game
-and summon for characters without using real in-game resources.
+Rezzy Legends is a Dragon Ball Legends sandbox project
+built for experimenting with characters, systems and ideas
+without using real in-game resources.
 </p>
 
 </section>
-
 
 <div class="back-row">
 
@@ -61,7 +52,6 @@ and summon for characters without using real in-game resources.
 </a>
 
 </div>
-
 
 <section class="project-content">
 
@@ -79,31 +69,34 @@ and summon for characters without using real in-game resources.
 
 </div>
 
-
 <h2>Highlights</h2>
 
 <div class="feature-list">
 
 <div class="feature">
-▸ Dragon Ball Legends Sandbox
+▸ Dragon Ball Legends sandbox environment
 </div>
 
+<div class="feature">
+▸ Character and system experimentation
+</div>
 
 <div class="feature">
 ▸ Experiment without spending real in-game resources
 </div>
 
 <div class="feature">
-▸ Standalone Sandbox experience
+▸ Standalone sandbox experience
 </div>
 
 </div>
-
 
 <div class="disclaimer">
 
 Dragon Ball and Dragon Ball Legends are trademarks of their
-respective owners. This is an independent sandbox project.
+respective owners. This is an independent sandbox project
+and is not affiliated with or endorsed by Bandai Namco
+Entertainment or the Dragon Ball Legends development team.
 
 </div>
 
@@ -111,13 +104,11 @@ respective owners. This is an independent sandbox project.
 
 </main>
 
-
 <footer>
 <p>© 2026 Taha (TN). All Rights Reserved.</p>
 </footer>
 
 </div>
-
 
 <script>
 
@@ -125,11 +116,18 @@ document.querySelectorAll('a[href]').forEach(link => {
 
 link.addEventListener('click', e => {
 
+const url = link.href;
+
 if (
 link.target === '_blank' ||
 link.hasAttribute('download') ||
-link.href.startsWith('mailto:') ||
-link.href.startsWith('tel:')
+url.startsWith('mailto:') ||
+url.startsWith('tel:') ||
+(
+link.origin === location.origin &&
+link.pathname === location.pathname &&
+link.hash
+)
 ) {
 return;
 }
@@ -139,7 +137,7 @@ e.preventDefault();
 document.body.classList.add('leaving');
 
 setTimeout(() => {
-window.location.href = link.href;
+window.location.href = url;
 }, 220);
 
 });
