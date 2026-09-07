@@ -29,12 +29,12 @@ It provides a simple way to create the required account credentials for connecti
 
 ### Rezzy Legends
 
-**Rezzy Legends** is a Dragon Ball Legends summon simulator.
+**Rezzy Legends** is a Dragon Ball Legends Sandbox.
 
 The project recreates the experience of performing summons without requiring the actual game, allowing users to experiment with different summon scenarios and explore available characters.
 
 **Highlights:**
-- Dragon Ball Legends summon simulation
+- Dragon Ball Legends sandbox
 - Character-based summon system
 - Experiment with summons without using real in-game resources
 
